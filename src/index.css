@@ -98,6 +98,24 @@
     animation: pulseGlow 2s ease-in-out infinite;
   }
 
+  .animate-butterfly-float {
+    animation: butterflyFloat 20s ease-in-out infinite;
+  }
+
+  .animate-wing-left {
+    animation: wingLeft 0.3s ease-in-out infinite;
+    transform-origin: right center;
+  }
+
+  .animate-wing-right {
+    animation: wingRight 0.3s ease-in-out infinite;
+    transform-origin: left center;
+  }
+
+  .animate-binary-scroll {
+    animation: binaryScroll 30s linear infinite;
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -106,6 +124,39 @@
   @keyframes pulseGlow {
     0%, 100% { box-shadow: 0 0 20px hsl(330, 85%, 60%, 0.3); }
     50% { box-shadow: 0 0 40px hsl(330, 85%, 60%, 0.5); }
+  }
+
+  @keyframes butterflyFloat {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(100px, -50px) rotate(15deg);
+    }
+    50% {
+      transform: translate(50px, 50px) rotate(-10deg);
+    }
+    75% {
+      transform: translate(-50px, -25px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+
+  @keyframes wingLeft {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.6); }
+  }
+
+  @keyframes wingRight {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.6); }
+  }
+
+  @keyframes binaryScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   @keyframes fadeInUp {

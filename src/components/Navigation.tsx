@@ -1,37 +1,45 @@
-import { Home, User, Briefcase, Code, Mail, FileText, Sparkles } from "lucide-react";
+import { Home, User, Briefcase, Code, Mail, FileText, Sparkles, Award } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { name: "Home", icon: Home, href: "#home" },
-  { name: "About Me", icon: User, href: "#about" },
-  { name: "Projects", icon: Briefcase, href: "#projects" },
-  { name: "Skills", icon: Code, href: "#skills" },
-  { name: "Experience", icon: Sparkles, href: "#experience" },
-  { name: "Contact", icon: Mail, href: "#contact" },
-  { name: "CV", icon: FileText, href: "#cv" },
+  { name: "Home", icon: Home, href: "/" },
+  { name: "About", icon: User, href: "/about" },
+  { name: "Projects", icon: Briefcase, href: "/projects" },
+  { name: "Skills", icon: Code, href: "/skills" },
+  { name: "Experience", icon: Sparkles, href: "/experience" },
+  { name: "Certificates", icon: Award, href: "/certificates" },
+  { name: "Contact", icon: Mail, href: "/contact" },
+  { name: "CV", icon: FileText, href: "/cv" },
 ];
 
 export const Navigation = () => {
+  const location = useLocation();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold font-display">
               PJ
             </div>
-            <span className="font-display font-semibold text-foreground">Princess Julia</span>
-          </div>
+            <span className="font-display font-semibold text-foreground hidden sm:inline">Princess Julia</span>
+          </Link>
           
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+                to={item.href}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                  location.pathname === item.href
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
               >
                 <item.icon className="w-4 h-4" />
                 <span className="text-sm">{item.name}</span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -46,7 +54,7 @@ export const Navigation = () => {
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
-            <a href="mailto:princess@email.com" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="mailto:pjmalungana07@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
