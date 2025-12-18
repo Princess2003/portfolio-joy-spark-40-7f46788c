@@ -1,47 +1,30 @@
-import { Code, Brain, Wrench, Heart } from "lucide-react";
+import { Code, Brain, Wrench, Heart, GitBranch, Cpu, Globe, Figma } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 
 const technicalSkills = [
-  { name: "Python", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "React", level: 85 },
-  { name: "SQL", level: 80 },
-  { name: "Data Analysis", level: 85 },
-  { name: "Machine Learning", level: 75 },
-  { name: "Git/GitHub", level: 80 },
-  { name: "HTML/CSS", level: 90 },
+  { name: "GIT", icon: GitBranch, level: 85 },
+  { name: "AI Generator", icon: Cpu, level: 80 },
+  { name: "API Implementation", icon: Globe, level: 85 },
+  { name: "Figma Prototype", icon: Figma, level: 75 },
 ];
 
 const softSkills = [
+  "Time Management",
   "Problem Solving",
   "Communication",
-  "Team Collaboration",
-  "Time Management",
-  "Critical Thinking",
-  "Adaptability",
-  "Attention to Detail",
-  "Leadership",
+  "Teamwork",
 ];
 
 const tools = [
   "VS Code",
-  "Jupyter Notebook",
-  "Git",
-  "Docker",
+  "GitHub",
   "Figma",
   "Postman",
-  "MongoDB",
-  "PostgreSQL",
+  "Vercel",
+  "Lovable",
 ];
 
-const interests = [
-  "Artificial Intelligence",
-  "Web Development",
-  "Data Science",
-  "Open Source",
-  "Technology Innovation",
-  "Problem Solving",
-];
+const interests = ["Baking", "Sports"];
 
 const Skills = () => {
   return (
@@ -56,31 +39,36 @@ const Skills = () => {
             <span className="text-sm text-muted-foreground">My Expertise</span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-bold">
-            Skills & <span className="text-gradient">Abilities</span>
+            Skills & <span className="text-gradient">Proficiencies</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Technical Skills */}
           <div className="p-6 rounded-xl bg-secondary/50 border border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Code className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-semibold">Technical Skills</h3>
+              <h3 className="font-display text-xl font-semibold">Technical Proficiencies</h3>
             </div>
             <div className="space-y-4">
               {technicalSkills.map((skill) => (
-                <div key={skill.name}>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>{skill.name}</span>
-                    <span className="text-primary">{skill.level}%</span>
+                <div key={skill.name} className="flex items-center gap-4 p-3 rounded-lg bg-background/50 border border-border/50">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <skill.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <div className="h-2 rounded-full bg-secondary">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    />
+                  <div className="flex-1">
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="font-medium">{skill.name}</span>
+                      <span className="text-primary">{skill.level}%</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-secondary">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-1000"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -99,7 +87,7 @@ const Skills = () => {
               {softSkills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm"
+                  className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium"
                 >
                   {skill}
                 </span>
@@ -119,7 +107,7 @@ const Skills = () => {
               {tools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-4 py-2 rounded-lg bg-secondary text-foreground border border-border text-sm"
+                  className="px-4 py-2 rounded-full bg-secondary text-foreground border border-border text-sm"
                 >
                   {tool}
                 </span>

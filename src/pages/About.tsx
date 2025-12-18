@@ -1,15 +1,7 @@
-import { User, MapPin, Calendar, Languages, Phone, Mail, Globe } from "lucide-react";
+import { User, Sparkles } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 
 const About = () => {
-  const personalInfo = [
-    { icon: Calendar, label: "Date of Birth", value: "07 April 2001" },
-    { icon: MapPin, label: "Location", value: "Johannesburg, South Africa" },
-    { icon: Languages, label: "Languages", value: "English, Xitsonga, Zulu" },
-    { icon: Phone, label: "Phone", value: "+27 67 138 6231" },
-    { icon: Mail, label: "Email", value: "pjmalungana07@gmail.com" },
-  ];
-
   return (
     <PageLayout 
       prevPage={{ path: "/", label: "Home" }}
@@ -26,55 +18,47 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <h3 className="font-display text-2xl font-semibold">Personal Information</h3>
-            <div className="space-y-4">
-              {personalInfo.map((info) => (
-                <div
-                  key={info.label}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 border border-border"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <info.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">{info.label}</div>
-                    <div className="font-medium">{info.value}</div>
-                  </div>
-                </div>
-              ))}
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Personal Branding Statement */}
+          <div className="p-8 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-primary">Personal Branding Statement</h3>
             </div>
+            <p className="text-lg text-foreground leading-relaxed">
+              I am a passionate Software Developer who transforms complex problems into elegant, 
+              user-friendly solutions. With expertise in AI integration and API implementation, 
+              I bridge the gap between innovative technology and practical applications. 
+              My commitment to continuous learning and collaborative teamwork drives me to 
+              deliver impactful results that exceed expectations.
+            </p>
           </div>
 
-          <div className="space-y-6">
+          {/* About Me */}
+          <div className="p-6 rounded-xl bg-secondary/50 border border-border space-y-4">
             <h3 className="font-display text-2xl font-semibold">About Me</h3>
-            <div className="p-6 rounded-xl bg-secondary/50 border border-border space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                I am a passionate and dedicated software developer with a strong foundation in data science 
-                and software development. My journey in technology has been driven by curiosity and a desire 
-                to create meaningful solutions.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                With expertise in Python, JavaScript, and various frameworks, I specialize in building 
-                efficient applications and analyzing complex datasets. I am constantly learning and 
-                adapting to new technologies to stay at the forefront of innovation.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Outside of coding, I enjoy exploring new technologies, participating in hackathons, 
-                and contributing to open-source projects. I believe in the power of technology to 
-                transform lives and am committed to making a positive impact through my work.
-              </p>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              I am a Software Developer Graduate currently interning at CAPACITI, where I have gained 
+              hands-on experience in AI Generators, API Implementation. I have also completed several 
+              professional development courses on Coursera to strengthen my technical and problem-solving skills.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              I'm passionate about building innovative solutions and continuously improving my craft. 
+              My key strengths include teamwork and strong analytical thinking. I look forward to 
+              advancing my career as a Software Engineer.
+            </p>
+          </div>
 
-            <div className="p-6 rounded-xl bg-primary/10 border border-primary/30">
-              <h4 className="font-display text-lg font-semibold mb-3 text-primary">Career Objective</h4>
-              <p className="text-muted-foreground">
-                To leverage my skills in software development and data science to contribute to 
-                innovative projects that make a real difference. I aim to grow as a professional 
-                while helping organizations achieve their technological goals.
-              </p>
-            </div>
+          {/* Career Objective */}
+          <div className="p-6 rounded-xl bg-primary/10 border border-primary/30">
+            <h4 className="font-display text-lg font-semibold mb-3 text-primary">Career Objective</h4>
+            <p className="text-muted-foreground">
+              To leverage my skills in software development and AI integration to contribute to 
+              innovative projects that make a real difference. I aim to grow as a professional 
+              while helping organizations achieve their technological goals.
+            </p>
           </div>
         </div>
       </section>
