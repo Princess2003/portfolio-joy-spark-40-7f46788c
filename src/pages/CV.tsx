@@ -1,4 +1,4 @@
-import { FileText, Download } from "lucide-react";
+import { FileText, Download, Mail, Phone, MapPin, Linkedin, Github, User, Calendar, Languages, Car } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 
@@ -20,88 +20,196 @@ const CV = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="p-8 rounded-xl bg-secondary/50 border border-border">
-            <div className="text-center mb-8">
-              <h3 className="font-display text-2xl font-bold mb-2">Princess Julia Malungana</h3>
-              <p className="text-muted-foreground">Software Developer</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                pjmalungana07@gmail.com | +27 67 138 6231 | Johannesburg, South Africa
-              </p>
+            {/* Header */}
+            <div className="text-center mb-8 pb-6 border-b border-border">
+              <h3 className="font-display text-3xl font-bold mb-2">PRINCESS JULIA MALUNGANA</h3>
+              <p className="text-primary text-lg font-medium">Software Developer</p>
+              <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm text-muted-foreground">
+                <a href="mailto:princess.malungana@capaciti.org.za" className="flex items-center gap-1 hover:text-primary">
+                  <Mail className="w-4 h-4" /> princess.malungana@capaciti.org.za
+                </a>
+                <a href="tel:0724467192" className="flex items-center gap-1 hover:text-primary">
+                  <Phone className="w-4 h-4" /> 072 446 7192
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-primary">
+                  <Linkedin className="w-4 h-4" /> LinkedIn
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-primary">
+                  <Github className="w-4 h-4" /> GitHub
+                </a>
+                <span className="flex items-center gap-1">
+                  <MapPin className="w-4 h-4" /> Pretoria Central, Gauteng
+                </span>
+              </div>
             </div>
 
-            <div className="space-y-8">
-              {/* Summary */}
-              <div>
-                <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
-                  Professional Summary
-                </h4>
-                <p className="text-muted-foreground">
-                  A passionate and dedicated software developer with a strong foundation in data science 
-                  and application development. Experienced in Python, JavaScript, React, and various 
-                  data analysis tools. Currently expanding skills through an Application Development 
-                  Learnership at Aborishanga Pty Ltd.
-                </p>
-              </div>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Left Column */}
+              <div className="space-y-6">
+                {/* Personal Details */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Personal Details
+                  </h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span className="text-muted-foreground">Age:</span>
+                      <span>22</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <span className="text-muted-foreground">Location:</span>
+                      <span>Pretoria Central, Gauteng</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Languages className="w-4 h-4 text-primary" />
+                      <span className="text-muted-foreground">Languages:</span>
+                      <span>English</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Car className="w-4 h-4 text-primary" />
+                      <span className="text-muted-foreground">Driver's Licence:</span>
+                      <span>Yes</span>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Experience */}
-              <div>
-                <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
-                  Work Experience
-                </h4>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between items-start">
-                      <h5 className="font-semibold">Application Development Learnership</h5>
-                      <span className="text-sm text-primary">Jan 2025 – Current</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Aborishanga Pty Ltd</p>
+                {/* Online Presence */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Online Presence
+                  </h4>
+                  <div className="space-y-2">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary">
+                      <Linkedin className="w-4 h-4 text-primary" /> LINKEDIN
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary">
+                      <Github className="w-4 h-4 text-primary" /> GITHUB
+                    </a>
                   </div>
-                  <div>
-                    <div className="flex justify-between items-start">
-                      <h5 className="font-semibold">Data Science Learnership</h5>
-                      <span className="text-sm text-primary">Mar 2024 – Nov 2024</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Explore AI Academy</p>
+                </div>
+
+                {/* Technical Proficiencies */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Technical Proficiencies
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["GIT", "AI GENERATOR", "API IMPLEMENTATION", "FIGMA PROTOTYPE"].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
+                </div>
+
+                {/* Soft Skills */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Soft Skills
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["TIME MANAGEMENT", "PROBLEM SOLVING", "COMMUNICATION", "TEAMWORK"].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs rounded-full bg-secondary text-foreground border border-border"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Interests */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Interests
+                  </h4>
+                  <p className="text-sm text-muted-foreground">Baking, Sports</p>
                 </div>
               </div>
 
-              {/* Education */}
-              <div>
-                <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
-                  Education
-                </h4>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between items-start">
-                      <h5 className="font-semibold">National Diploma in Information Technology</h5>
-                      <span className="text-sm text-primary">2022 - 2024</span>
+              {/* Right Column */}
+              <div className="lg:col-span-2 space-y-6">
+                {/* About */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    About
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    I am a Software Developer Graduate currently interning at CAPACITI, where I have gained hands-on 
+                    experience in AI Generators, API Implementation. I have also completed several professional 
+                    development courses on Coursera to strengthen my technical and problem-solving skills. I'm 
+                    passionate about building innovative solutions and continuously improving my craft. My key 
+                    strengths include teamwork, strong analytical thinking. I look forward to advancing my career 
+                    as a Software Engineer.
+                  </p>
+                </div>
+
+                {/* Experience */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Experience
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="p-4 rounded-lg bg-background/50 border border-border/50">
+                      <div className="flex justify-between items-start flex-wrap gap-2">
+                        <h5 className="font-semibold">Candidate</h5>
+                        <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">October 2024 – Present</span>
+                      </div>
+                      <p className="text-sm text-primary font-medium">CAPACITI</p>
+                      <p className="text-xs text-muted-foreground mb-2">Pretoria Central, Gauteng</p>
+                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                        <li>Gained hands-on experience in AI Generators</li>
+                        <li>Worked on API Implementation projects</li>
+                        <li>Built multiple full-stack projects with AI integration</li>
+                        <li>Collaborated on team projects using Agile methodologies</li>
+                      </ul>
                     </div>
-                    <p className="text-sm text-muted-foreground">Tshwane University of Technology</p>
-                  </div>
-                  <div>
-                    <div className="flex justify-between items-start">
-                      <h5 className="font-semibold">Matric Certificate</h5>
-                      <span className="text-sm text-primary">2019</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Bopedi Bapedi Secondary</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Skills */}
-              <div>
-                <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
-                  Technical Skills
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Python", "JavaScript", "React", "SQL", "Git", "HTML/CSS", "Data Analysis", "Machine Learning"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                {/* Education */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Education
+                  </h4>
+                  <div className="p-4 rounded-lg bg-background/50 border border-border/50">
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <h5 className="font-semibold">Diploma Information Technology in Software Development</h5>
+                      <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">2022 - 2024</span>
+                    </div>
+                    <p className="text-sm text-primary font-medium">ROSEBANK COLLEGE</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Comprehensive software development program covering modern technologies and best practices
+                    </p>
+                  </div>
+                </div>
+
+                {/* Certifications */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    Certifications
+                  </h4>
+                  <p className="text-sm text-muted-foreground">N/A</p>
+                </div>
+
+                {/* References */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    References
+                  </h4>
+                  <div className="p-4 rounded-lg bg-background/50 border border-border/50">
+                    <p className="font-semibold">Kefiloe Mphye</p>
+                    <p className="text-sm text-muted-foreground">Talent Development Coach</p>
+                    <a href="mailto:kefiloe.mphye@capaciti.org.za" className="text-sm text-primary hover:underline">
+                      kefiloe.mphye@capaciti.org.za
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
