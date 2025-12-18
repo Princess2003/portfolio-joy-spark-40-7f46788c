@@ -1,6 +1,15 @@
 import { Code, Brain, Wrench, Heart, GitBranch, Cpu, Globe, Figma } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 
+const programmingLanguages = [
+  { name: "Python", level: 60 },
+  { name: "JavaScript", level: 85 },
+  { name: "SQL", level: 80 },
+  { name: "HTML/CSS", level: 90 },
+  { name: "C#", level: 75 },
+  { name: "Kotlin", level: 70 },
+];
+
 const technicalSkills = [
   { name: "GIT", icon: GitBranch, level: 85 },
   { name: "AI Generator", icon: Cpu, level: 80 },
@@ -44,11 +53,37 @@ const Skills = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Technical Skills */}
+          {/* Programming Languages */}
           <div className="p-6 rounded-xl bg-secondary/50 border border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Code className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold">Programming Languages</h3>
+            </div>
+            <div className="space-y-4">
+              {programmingLanguages.map((lang) => (
+                <div key={lang.name}>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="font-medium">{lang.name}</span>
+                    <span className="text-primary">{lang.level}%</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-secondary">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-1000"
+                      style={{ width: `${lang.level}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Technical Skills */}
+          <div className="p-6 rounded-xl bg-secondary/50 border border-border">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Wrench className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-display text-xl font-semibold">Technical Proficiencies</h3>
             </div>
@@ -95,43 +130,44 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Tools */}
-          <div className="p-6 rounded-xl bg-secondary/50 border border-border">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-primary" />
+          {/* Tools & Interests */}
+          <div className="space-y-6">
+            <div className="p-6 rounded-xl bg-secondary/50 border border-border">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Wrench className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-semibold">Tools & Technologies</h3>
               </div>
-              <h3 className="font-display text-xl font-semibold">Tools & Technologies</h3>
+              <div className="flex flex-wrap gap-3">
+                {tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-4 py-2 rounded-full bg-secondary text-foreground border border-border text-sm"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="px-4 py-2 rounded-full bg-secondary text-foreground border border-border text-sm"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
 
-          {/* Interests */}
-          <div className="p-6 rounded-xl bg-secondary/50 border border-border">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary" />
+            <div className="p-6 rounded-xl bg-secondary/50 border border-border">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-semibold">Interests</h3>
               </div>
-              <h3 className="font-display text-xl font-semibold">Interests</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {interests.map((interest) => (
-                <span
-                  key={interest}
-                  className="px-4 py-2 rounded-full bg-primary/5 text-muted-foreground border border-primary/10 text-sm"
-                >
-                  {interest}
-                </span>
-              ))}
+              <div className="flex flex-wrap gap-3">
+                {interests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="px-4 py-2 rounded-full bg-primary/5 text-muted-foreground border border-primary/10 text-sm"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

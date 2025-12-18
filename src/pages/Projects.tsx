@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Marketing Copy Generator",
     description: "An AI-powered tool for generating compelling marketing copy and content.",
-    url: "#",
+    url: "https://marketingpostgenerate.vercel.app/",
     tech: ["AI/ML", "Python", "NLP"],
   },
   {
