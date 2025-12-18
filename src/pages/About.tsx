@@ -1,5 +1,6 @@
 import { User, Sparkles } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
+import profileImage from "@/assets/profile.jpg";
 
 const About = () => {
   return (
@@ -18,7 +19,29 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-8">
+          {/* Hello Section with Picture */}
+          <div className="flex flex-col md:flex-row items-center gap-8 p-8 rounded-xl bg-secondary/50 border border-border">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 flex-shrink-0">
+              <img 
+                src={profileImage} 
+                alt="Princess Julia Malungana" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-lg text-muted-foreground mb-2">Hello, I'm</p>
+              <h3 className="font-display text-3xl md:text-4xl font-bold text-gradient mb-4">
+                Princess Julia Malungana
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                I am a Software Developer Graduate currently interning at CAPACITI, where I have gained 
+                hands-on experience in AI Generators, API Implementation. I have also completed several 
+                professional development courses on Coursera to strengthen my technical and problem-solving skills.
+              </p>
+            </div>
+          </div>
+
           {/* Personal Branding Statement */}
           <div className="p-8 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30">
             <div className="flex items-center gap-3 mb-4">
@@ -39,11 +62,6 @@ const About = () => {
           {/* About Me */}
           <div className="p-6 rounded-xl bg-secondary/50 border border-border space-y-4">
             <h3 className="font-display text-2xl font-semibold">About Me</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              I am a Software Developer Graduate currently interning at CAPACITI, where I have gained 
-              hands-on experience in AI Generators, API Implementation. I have also completed several 
-              professional development courses on Coursera to strengthen my technical and problem-solving skills.
-            </p>
             <p className="text-muted-foreground leading-relaxed">
               I'm passionate about building innovative solutions and continuously improving my craft. 
               My key strengths include teamwork and strong analytical thinking. I look forward to 

@@ -3,6 +3,15 @@ import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 
 const CV = () => {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Princess_Julia_Malungana_CV.docx';
+    link.download = 'Princess_Julia_Malungana_CV.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <PageLayout 
       prevPage={{ path: "/contact", label: "Contact" }}
@@ -46,6 +55,21 @@ const CV = () => {
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Left Column */}
               <div className="space-y-6">
+                {/* About - Moved to top */}
+                <div>
+                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
+                    About
+                  </h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    I am a Software Developer Graduate currently interning at CAPACITI, where I have gained hands-on 
+                    experience in AI Generators, API Implementation. I have also completed several professional 
+                    development courses on Coursera to strengthen my technical and problem-solving skills. I'm 
+                    passionate about building innovative solutions and continuously improving my craft. My key 
+                    strengths include teamwork, strong analytical thinking. I look forward to advancing my career 
+                    as a Software Engineer.
+                  </p>
+                </div>
+
                 {/* Personal Details */}
                 <div>
                   <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
@@ -135,21 +159,6 @@ const CV = () => {
 
               {/* Right Column */}
               <div className="lg:col-span-2 space-y-6">
-                {/* About */}
-                <div>
-                  <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
-                    About
-                  </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    I am a Software Developer Graduate currently interning at CAPACITI, where I have gained hands-on 
-                    experience in AI Generators, API Implementation. I have also completed several professional 
-                    development courses on Coursera to strengthen my technical and problem-solving skills. I'm 
-                    passionate about building innovative solutions and continuously improving my craft. My key 
-                    strengths include teamwork, strong analytical thinking. I look forward to advancing my career 
-                    as a Software Engineer.
-                  </p>
-                </div>
-
                 {/* Experience */}
                 <div>
                   <h4 className="font-display text-lg font-semibold mb-3 text-primary border-b border-border pb-2">
@@ -215,7 +224,7 @@ const CV = () => {
             </div>
 
             <div className="mt-8 text-center">
-              <Button variant="hero" size="lg">
+              <Button variant="hero" size="lg" onClick={handleDownload}>
                 <Download className="w-5 h-5 mr-2" />
                 Download Full CV
               </Button>
