@@ -4,8 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const CV = () => {
   const handleDownload = () => {
-    const cvUrl = 'https://github.com/Princess2003/portfolio-joy-spark-40/raw/9b304626312fef2be895574571fd9304556b1b32/2024%20Candidate%20CV%20V2%20(2)%20(1)%20(2).pdf';
-    window.open(cvUrl, '_blank');
+    const cvUrl = 'https://github.com/Princess2003/portfolio-joy-spark-40-7f46788c/raw/9d40182dd859e92d708951a071aa2ef9668fffe7/2024%20Candidate%20CV%20V2%20(2)%20(1)%20(2).pdf';
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'Princess_Julia_Malungana_CV.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
