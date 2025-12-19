@@ -4,12 +4,8 @@ import { Button } from "@/components/ui/button";
 
 const CV = () => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/Princess_Julia_Malungana_CV.docx';
-    link.download = 'Princess_Julia_Malungana_CV.docx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const cvUrl = 'https://github.com/Princess2003/Portfolio/raw/b7104b948a9da7f3d632c173e190d4d1781f4cef/2024%20Candidate%20CV%20V2%20(2)%20(1)%20(2).pdf';
+    window.open(cvUrl, '_blank');
   };
 
   return (
