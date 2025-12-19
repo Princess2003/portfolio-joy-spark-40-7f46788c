@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const CV = () => {
   const handleDownload = () => {
-    const cvUrl = 'https://github.com/Princess2003/Portfolio/raw/b7104b948a9da7f3d632c173e190d4d1781f4cef/2024%20Candidate%20CV%20V2%20(2)%20(1)%20(2).pdf';
+    const cvUrl = 'https://github.com/Princess2003/portfolio-joy-spark-40/raw/9b304626312fef2be895574571fd9304556b1b32/2024%20Candidate%20CV%20V2%20(2)%20(1)%20(2).pdf';
     window.open(cvUrl, '_blank');
   };
 
