@@ -55,13 +55,13 @@ const Contact = () => {
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/princess-malungana-6737a6322/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5" />
                   LinkedIn
                 </a>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Princess2003" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5" />
                   GitHub
                 </a>
